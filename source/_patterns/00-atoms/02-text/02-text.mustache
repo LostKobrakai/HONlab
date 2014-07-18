@@ -1,0 +1,13 @@
+<div class="text ">
+	<div class="overflow {{# textShorten }}overflow-disable{{/ textShorten }}">
+		{{# paragraph.count }}
+		<p>{{ excerpt.long }}</p>
+		{{/ paragraph.count }}
+		{{^ paragraph.count }}
+		<p>{{ excerpt.long }}</p>
+		<p>{{ excerpt.long }}</p>
+		<p>{{ excerpt.long }}</p>
+		<p>{{ excerpt.long }}</p>
+		{{/ paragraph.count }}
+	</div>
+</div>

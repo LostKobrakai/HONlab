@@ -1,0 +1,1765 @@
+@charset "UTF-8";
+/*                                                                                                                                         
+                                                ,,            ,,                          ,,                                             
+ .M"""bgd mm                                    db          `7MM        mm         mm   `7MM                                    OO OO OO 
+,MI    "Y MM                                                  MM        MM         MM     MM                                    88 88 88 
+`MMb.   mmMMmm ,pW"Wq.`7MMpdMAo.     `7Mb,od8 `7MM  .P"Ybmmm  MMpMMMb.mmMMmm     mmMMmm   MMpMMMb.  .gP"Ya `7Mb,od8 .gP"Ya      || || || 
+  `YMMNq. MM  6W'   `Wb MM   `Wb       MM' "'   MM :MI  I8    MM    MM  MM         MM     MM    MM ,M'   Yb  MM' "',M'   Yb     || || || 
+.     `MM MM  8M     M8 MM    M8       MM       MM  WmmmP"    MM    MM  MM         MM     MM    MM 8M""""""  MM    8M""""""     `' `' `' 
+Mb     dM MM  YA.   ,A9 MM   ,AP       MM       MM 8M         MM    MM  MM         MM     MM    MM YM.    ,  MM    YM.    ,     ,, ,, ,, 
+P"Ybmmd"  `Mbmo`Ybmd9'  MMbmmd'      .JMML.   .JMML.YMMMMMb .JMML  JMML.`Mbmo      `Mbmo.JMML  JMML.`Mbmmd'.JMML.   `Mbmmd'     db db db 
+                        MM                         6'     dP                                                                             
+                      .JMML.                       Ybmmmd'                                                                               
+
+Pattern Lab doesn't have any CSS requirements, which means you can write your styles however you want. Hooray!
+You can use Sass, Less, vanilla CSS, or some other crazy thing I haven't heard of yet.
+So please don't use these styles. They're just here to put together the demo, and nothing more.
+They're intentionally gray, boring, and crappy because you're supposed to do this stuff yourself.
+
+Atomic design is philosophically complimentary with these CSS approaches:
+
+* SMACSS by Jonathan Snook http://smacss.com/
+* OOCSS by Nicole Sullivan http://oocss.org/
+* BEM CSS Methology : http://bem.info/method/
+* CSS Guidelines by Harry Roberts : https://github.com/csswizardry/CSS-Guidelines
+
+So feel free to use any of these approaches. Or don't. It's totally up to you.
+
+*/
+/*------------------------------------*\
+    $TABLE OF CONTENTS 
+    based generally on Harry Roberts excellent CSS Guidelines https://github.com/csswizardry/CSS-Guidelines
+\*------------------------------------*/
+/**
+ * VARIABLES..............................Declarations of Sass variables 
+ * .....Colors
+ * .....Typography
+ * .....Layout
+ * .....Defaults
+ * .....Breakpoints
+ * MIXINS.................................Sass mixins 
+ * RESET..................................Set reset defaults
+ * GLOBAL CLASSES.........................Set reset defaults
+ * GLOBAL ELEMENTS........................Establish global styles
+ * .....Main
+ * .....Headings
+ * .....Text-related elements (p, blockquote, lists)
+ * .....Defaults
+ * .....Breakpoints
+ * TYPOGRAPHY------------------------------
+ * MEDIA------------------------------
+ * LAYOUT------------------------------
+ * NAVIGATION------------------------------
+ * TOC To Be Continued
+ */
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+/*!
+TYPEPLATE
+URL ........... http://typeplate.com
+VERSION ....... 1.1.4
+Github ........ https://github.com/typeplate/bower
+AUTHORS ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+LICENSE ....... Creative Commmons Attribution 3.0 (http://creativecommons.org/licenses/by/3.0)
+LICENSE URL ... https://github.com/typeplate/bower/blob/master/license.txt
+*/
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/* CSS Transition
+	Usage: @include transition(width,0.3s,ease-out);
+ */
+/* Rem Unit font sizes with relative fallback http:/seesparkbox.com/foundry/scss_rem_mixin_now_with_a_better_fallback  
+	Usage: @include font-size(1, large);
+*/
+/*------------------------------------*\
+    $RESET
+\*------------------------------------*/
+/* Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic);
+/* line 6, scss/generic/_reset.scss */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 11, scss/generic/_reset.scss */
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, legend, label, table, header, footer, nav, section, figure {
+  margin: 0;
+  padding: 0; }
+
+/* line 15, scss/generic/_reset.scss */
+header, footer, nav, section, article, hgroup, figure {
+  display: block; }
+
+/*!
+TYPEPLATE
+URL ........... http://typeplate.com
+VERSION ....... 1.1.4
+Github ........ https://github.com/typeplate/bower
+AUTHORS ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+LICENSE ....... Creative Commmons Attribution 3.0 (http://creativecommons.org/licenses/by/3.0)
+LICENSE URL ... https://github.com/typeplate/bower/blob/master/license.txt
+*/
+@font-face {
+  font-family: "Ampersand";
+  src: local("Georgia"), local("Garamond"), local("Palatino"), local("Book Antiqua");
+  unicode-range: U+0026; }
+@font-face {
+  font-family: "Ampersand";
+  src: local("Georgia");
+  unicode-range: U+270C; }
+/* line 397, scss/generic/_typeplate.scss */
+body {
+  word-wrap: break-word; }
+
+/* line 401, scss/generic/_typeplate.scss */
+pre code {
+  word-wrap: normal; }
+
+/**
+ * Dropcap Sass @include
+ * Use the following Sass @include with any selector you feel necessary.
+ *
+	@include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg);
+ *
+ * Extend this object into your custom stylesheet. Let the variables do the work.
+ *
+ */
+/* line 526, scss/generic/_typeplate.scss */
+html {
+  font: normal 100%/1.4 "Lato", "HelveticaNeue", "Helvetica", "Arial", sans-serif, sans-serif; }
+
+/* line 534, scss/generic/_typeplate.scss */
+body {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+  color: #444444; }
+
+/* line 545, scss/generic/_typeplate.scss */
+small {
+  font-size: 65%; }
+
+/* line 569, scss/generic/_typeplate.scss */
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizeLegibility;
+  line-height: 1;
+  margin-top: 0; }
+
+/* line 584, scss/generic/_typeplate.scss */
+.tera {
+  font-size: 81px;
+  font-size: 5.0625rem;
+  margin-bottom: 4.42469px;
+  margin-bottom: 0.27654rem; }
+
+/* line 584, scss/generic/_typeplate.scss */
+.giga {
+  font-size: 60px;
+  font-size: 3.75rem;
+  margin-bottom: 5.97333px;
+  margin-bottom: 0.37333rem; }
+
+/* line 584, scss/generic/_typeplate.scss */
+.mega {
+  font-size: 54px;
+  font-size: 3.375rem;
+  margin-bottom: 6.63704px;
+  margin-bottom: 0.41481rem; }
+
+/* line 584, scss/generic/_typeplate.scss */
+.alpha, h1 {
+  font-size: 40px;
+  font-size: 2.5rem;
+  margin-bottom: 8.96px;
+  margin-bottom: 0.56rem; }
+
+/* line 584, scss/generic/_typeplate.scss */
+.beta, h2 {
+  font-size: 36px;
+  font-size: 2.25rem;
+  margin-bottom: 9.95556px;
+  margin-bottom: 0.62222rem; }
+
+/* line 584, scss/generic/_typeplate.scss */
+.gamma, h3 {
+  font-size: 27px;
+  font-size: 1.6875rem;
+  margin-bottom: 13.27407px;
+  margin-bottom: 0.82963rem; }
+
+/* line 584, scss/generic/_typeplate.scss */
+.delta, h4 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  margin-bottom: 14.93333px;
+  margin-bottom: 0.93333rem; }
+
+/* line 584, scss/generic/_typeplate.scss */
+.epsilon, h5 {
+  font-size: 18px;
+  font-size: 1.125rem;
+  margin-bottom: 19.91111px;
+  margin-bottom: 1.24444rem; }
+
+/* line 584, scss/generic/_typeplate.scss */
+.zeta, h6 {
+  font-size: 16px;
+  font-size: 1rem;
+  margin-bottom: 22.4px;
+  margin-bottom: 1.4rem; }
+
+/* line 624, scss/generic/_typeplate.scss */
+p {
+  margin: auto auto 0; }
+
+/* line 642, scss/generic/_typeplate.scss */
+abbr,
+acronym,
+blockquote,
+code,
+dir,
+kbd,
+listing,
+plaintext,
+q,
+samp,
+tt,
+var,
+xmp {
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -o-hyphens: none;
+  hyphens: none; }
+
+/* line 662, scss/generic/_typeplate.scss */
+pre code {
+  white-space: -moz-pre-wrap;
+  white-space: pre-wrap; }
+
+/* line 667, scss/generic/_typeplate.scss */
+pre {
+  white-space: pre; }
+
+/* line 671, scss/generic/_typeplate.scss */
+code {
+  white-space: pre;
+  font-family: monospace; }
+
+/**
+ * Abbreviations Markup
+ *
+	<abbr title="hyper text markup language">HMTL</abbr>
+ *
+ * Extend this object into your markup.
+ *
+ */
+/* line 687, scss/generic/_typeplate.scss */
+abbr {
+  font-variant: small-caps;
+  font-weight: 600;
+  text-transform: lowercase;
+  color: gray; }
+  /* line 689, scss/generic/_typeplate.scss */
+  abbr[title]:hover {
+    cursor: help; }
+
+/* line 698, scss/generic/_typeplate.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #333333; }
+
+/* line 713, scss/generic/_typeplate.scss */
+p + .drop-cap {
+  text-indent: 0;
+  margin-top: 0; }
+
+/* line 428, scss/generic/_typeplate.scss */
+.drop-cap:first-letter {
+  float: left;
+  margin: inherit;
+  padding: inherit;
+  font-size: 4em;
+  font-family: inherit;
+  line-height: 1;
+  text-indent: 0;
+  background: transparent;
+  color: inherit; }
+
+/**
+ * Lining Definition Style Markup
+ *
+	<dl class="lining">
+		<dt><b></b></dt>
+		<dd></dd>
+	</dl>
+ *
+ * Extend this object into your markup.
+ *
+ */
+/* line 466, scss/generic/_typeplate.scss */
+.lining dt,
+.lining dd {
+  display: inline;
+  margin: 0; }
+/* line 474, scss/generic/_typeplate.scss */
+.lining dt + dt:before,
+.lining dd + dt:before {
+  content: "\A";
+  white-space: pre; }
+/* line 482, scss/generic/_typeplate.scss */
+.lining dd + dd:before {
+  content: ", "; }
+/* line 486, scss/generic/_typeplate.scss */
+.lining dd:before {
+  content: ": ";
+  margin-left: -0.2rem; }
+
+/**
+ * Dictionary Definition Style Markup
+ *
+	<dl class="dictionary-style">
+		<dt><b></b></dt>
+			<dd></dd>
+	</dl>
+ *
+ * Extend this object into your markup.
+ *
+ */
+/* line 494, scss/generic/_typeplate.scss */
+.dictionary-style dt {
+  display: inline;
+  counter-reset: definitions; }
+  /* line 498, scss/generic/_typeplate.scss */
+  .dictionary-style dt + dt:before {
+    content: ", ";
+    margin-left: -0.2rem; }
+/* line 504, scss/generic/_typeplate.scss */
+.dictionary-style dd {
+  display: block;
+  counter-increment: definitions; }
+  /* line 507, scss/generic/_typeplate.scss */
+  .dictionary-style dd:before {
+    content: counter(definitions,decimal) ". "; }
+
+/**
+ * Blockquote Markup
+ *
+		<figure>
+			<blockquote cite="">
+				<p></p>
+			</blockquote>
+			<figcaption>
+				<cite>
+					<small><a href=""></a></small>
+				</cite>
+			</figcaption>
+		</figure>
+ *
+ * Extend this object into your markup.
+ *
+ */
+/**
+ * Pull Quotes Markup
+ *
+	<aside class="pull-quote">
+		<blockquote>
+			<p></p>
+		</blockquote>
+	</aside>
+ *
+ * Extend this object into your custom stylesheet.
+ *
+ */
+/* line 797, scss/generic/_typeplate.scss */
+.pull-quote {
+  position: relative;
+  padding: 1em; }
+  /* line 368, scss/generic/_typeplate.scss */
+  .pull-quote:before, .pull-quote:after {
+    height: 1em;
+    opacity: 0.5;
+    position: absolute;
+    font-size: 4em;
+    color: #dc976e; }
+  /* line 376, scss/generic/_typeplate.scss */
+  .pull-quote:before {
+    content: '“';
+    top: 0;
+    left: 0; }
+  /* line 381, scss/generic/_typeplate.scss */
+  .pull-quote:after {
+    content: '”';
+    bottom: 0;
+    right: 0; }
+
+/**
+ * Figures Markup
+ *
+	<figure>
+		<figcaption>
+			<strong>Fig. 4.2 | </strong>Type Anatomy, an excerpt from Mark Boulton's book<cite title="http://designingfortheweb.co.uk/book/part3/part3_chapter11.php">"Designing for the Web"</cite>
+		</figcaption>
+	</figure>
+ *
+ * Extend this object into your markup.
+ *
+ */
+/**
+ * Footnote Markup : Replace 'X' with your unique number for each footnote
+ *
+	<article>
+		<p><sup><a href="#fn-itemX" id="fn-returnX"></a></sup></p>
+		<footer>
+			<ol class="foot-notes">
+				<li id="fn-itemX"><a href="#fn-returnX">↩</a></li>
+			</ol>
+		</footer>
+	</article>
+ *
+ * Extend this object into your markup.
+ *
+ */
+/*------------------------------------*\
+    $GLOBAL ELEMENTS
+\*------------------------------------*/
+/*------------------------------------*\
+		$GLOBAL CLASSES
+\*------------------------------------*/
+/* Clearfix */
+/* line 6, scss/base/_global-classes.scss */
+.cf, [role=main], .gallery-6, .comment-form-container, .comment, .loggedin-name {
+  *zoom: 1; }
+
+/* line 9, scss/base/_global-classes.scss */
+.cf:before, [role=main]:before, .gallery-6:before, .comment-form-container:before, .comment:before, .loggedin-name:before, .cf:after, [role=main]:after, .gallery-6:after, .comment-form-container:after, .comment:after, .loggedin-name:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+/* line 14, scss/base/_global-classes.scss */
+.cf:after, [role=main]:after, .gallery-6:after, .comment-form-container:after, .comment:after, .loggedin-name:after {
+  clear: both; }
+
+/* Completely remove from the flow and screen readers. */
+/* line 19, scss/base/_global-classes.scss */
+.is-hidden {
+  display: none !important;
+  visibility: hidden !important; }
+
+/* Completely remove from the flow but leave available to screen readers. */
+/* line 25, scss/base/_global-classes.scss */
+.is-vishidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px); }
+
+/* Floats */
+/* line 36, scss/base/_global-classes.scss */
+.right {
+  float: right;
+  padding: 0 0 1em 1em; }
+
+/* line 41, scss/base/_global-classes.scss */
+.right-search {
+  float: right;
+  padding: 0 0 1em 0; }
+
+/* line 46, scss/base/_global-classes.scss */
+.left {
+  float: left;
+  padding: 0 1em 1em 0; }
+
+/* Text-Align */
+/* line 52, scss/base/_global-classes.scss */
+.align-right {
+  text-align: right; }
+
+/* line 56, scss/base/_global-classes.scss */
+.align-center {
+  text-align: center; }
+
+/* line 60, scss/base/_global-classes.scss */
+.align-left {
+  text-align: left; }
+
+/* line 65, scss/base/_global-classes.scss */
+.valid {
+  color: #089e00; }
+
+/* line 69, scss/base/_global-classes.scss */
+.error {
+  color: red; }
+
+/* line 73, scss/base/_global-classes.scss */
+.warning {
+  color: #fff664; }
+
+/* line 77, scss/base/_global-classes.scss */
+.information {
+  color: #000db5; }
+
+/* line 81, scss/base/_global-classes.scss */
+.font-secondary {
+  font-family: "tf-arrow", Georgia, Times, "Times New Roman", serif; }
+
+/* line 85, scss/base/_global-classes.scss */
+.word-fix {
+  white-space: nowrap; }
+
+@font-face {
+  font-family: 'tf-arrow';
+  src: url("../fonts/tfarrowmedium-nor-webfont.eot");
+  src: url("../fonts/tfarrowmedium-nor-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/tfarrowmedium-nor-webfont.woff") format("woff"), url("../fonts/tfarrowmedium-nor-webfont.ttf") format("truetype"), url("../fonts/tfarrowmedium-nor-webfont.svg#icons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* line 14, scss/base/_main.scss */
+body {
+  background: white;
+  background: url("../images/bg.png") center top;
+  font: 100%/1.4 "Lato", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  font-weight: 400;
+  -webkit-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility; }
+
+/* line 25, scss/base/_main.scss */
+main {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2rem 0 1rem; }
+
+@media (min-width: 37.5em) {
+  /* line 32, scss/base/_main.scss */
+  main {
+    padding-left: 20px;
+    padding-right: 20px; } }
+/* Links */
+/* line 2, scss/base/_links.scss */
+a {
+  color: #9d8450;
+  text-decoration: none;
+  outline: 0; }
+  /* line 7, scss/base/_links.scss */
+  a:hover, a:focus {
+    color: #333333;
+    text-decoration: underline; }
+
+/* Headings */
+/*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
+/* line 4, scss/base/_headings.scss */
+.uppercase, h1, .alpha, h2, .beta, h3, .gamma, .nav-list > li, #nav-toggle, .button, button, input[type="submit"], .button-alt, .comment-name {
+  text-transform: uppercase;
+  letter-spacing: .10em; }
+
+/* line 14, scss/base/_headings.scss */
+h1, .alpha, h1,
+h2, .beta, h2,
+h3, .gamma, h3,
+h4, .delta, h4,
+h5, .epsilon, h5,
+h6, .zeta, h6 {
+  color: #333333;
+  border-bottom: 2px solid transparent;
+  margin-bottom: 1rem; }
+
+/* line 25, scss/base/_headings.scss */
+h1, .alpha, h1 {
+  line-height: 1.2;
+  font-weight: normal; }
+
+/* line 31, scss/base/_headings.scss */
+h2, .beta, h2 {
+  line-height: 1.2;
+  font-weight: normal; }
+
+/* line 37, scss/base/_headings.scss */
+h3, .gamma, h3 {
+  line-height: 1.2;
+  font-weight: normal; }
+
+/* line 43, scss/base/_headings.scss */
+h4, .delta, h4 {
+  font-weight: normal; }
+
+/* line 47, scss/base/_headings.scss */
+h5, .epsilon, h5 {
+  font-weight: normal;
+  line-height: 1.2; }
+
+/* line 52, scss/base/_headings.scss */
+h6, .zeta, h6 {
+  font-weight: normal;
+  line-height: 1.2; }
+
+/* Subheadings */
+/* line 58, scss/base/_headings.scss */
+.subheading {
+  font-weight: normal; }
+
+/* line 62, scss/base/_headings.scss */
+.headline {
+  font-family: "tf-arrow", Georgia, Times, "Times New Roman", serif;
+  font-weight: normal;
+  border-bottom: 2px solid #9d8450;
+  margin-bottom: 1rem; }
+
+/* line 69, scss/base/_headings.scss */
+.headline .date {
+  font-size: 60%;
+  line-height: 1;
+  color: gray;
+  font-family: "Lato", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  letter-spacing: 0; }
+
+/* Text-Related Elements */
+/* line 2, scss/base/_text.scss */
+p {
+  margin-bottom: 1em; }
+
+/* Blockquote */
+/* line 7, scss/base/_text.scss */
+blockquote {
+  font-style: italic;
+  border-left: 1px solid gray;
+  color: gray;
+  padding-left: 1em;
+  margin-bottom: 1em; }
+
+/* Horizontal Rule */
+/* line 16, scss/base/_text.scss */
+hr {
+  border: 0;
+  height: 2px;
+  background: #9d8450;
+  margin: 2em 0; }
+
+/* line 23, scss/base/_text.scss */
+abbr {
+  border-bottom: 1px dotted gray;
+  cursor: help; }
+
+/* line 30, scss/base/_text.scss */
+del:hover, s:hover {
+  text-decoration: none; }
+
+/* line 35, scss/base/_text.scss */
+mark {
+  background-color: rgba(157, 132, 80, 0.8);
+  padding: 0 .2em; }
+
+/* line 1, scss/base/_lists.scss */
+ol, ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+/* line 7, scss/base/_lists.scss */
+li {
+  margin-bottom: .2em; }
+
+/* line 11, scss/base/_lists.scss */
+li > ul > li:first-child {
+  margin-top: .2em; }
+
+/* Definition Lists */
+/* line 17, scss/base/_lists.scss */
+dl {
+  overflow: hidden;
+  margin: 0 0 1em; }
+
+/* line 22, scss/base/_lists.scss */
+dt {
+  font-weight: bold; }
+
+/* line 26, scss/base/_lists.scss */
+dd {
+  margin-left: 0; }
+
+/*------------------------------------*\
+    $MEDIA ELEMENTS
+\*------------------------------------*/
+/* Flexible Media */
+/* line 6, scss/base/_media.scss */
+img, video, object {
+  max-width: 100%;
+  height: auto; }
+
+/* line 11, scss/base/_media.scss */
+iframe {
+  margin-bottom: 1em; }
+
+/* line 15, scss/base/_media.scss */
+figure {
+  margin-bottom: 1em; }
+  /* line 17, scss/base/_media.scss */
+  figure img {
+    margin-bottom: 0.5em; }
+
+/* line 21, scss/base/_media.scss */
+figcaption {
+  font-style: italic; }
+
+/* line 25, scss/base/_media.scss */
+.responsiveObject {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+  overflow: hidden; }
+
+/* line 32, scss/base/_media.scss */
+.responsiveObject .inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; }
+
+/* line 41, scss/base/_media.scss */
+.responsiveObject--4x3 {
+  padding-bottom: 75%; }
+
+/*------------------------------------*\
+		$FORMS
+\*------------------------------------*/
+/* line 4, scss/base/_forms.scss */
+form ol, form ul {
+  list-style: none;
+  margin-left: 0; }
+
+/* line 9, scss/base/_forms.scss */
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0; }
+
+/* line 15, scss/base/_forms.scss */
+label {
+  display: block;
+  padding-bottom: 0.5em; }
+
+/* line 20, scss/base/_forms.scss */
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0; }
+
+/* line 26, scss/base/_forms.scss */
+input, textarea {
+  width: 100%;
+  border: 2px solid #dddddd;
+  padding: 0.5em 0.65rem;
+  background: white; }
+
+/* line 33, scss/base/_forms.scss */
+input[type=text], input[type=search], input[type=url], input[type=number], textarea {
+  -webkit-appearance: none; }
+
+/* line 37, scss/base/_forms.scss */
+button, input[type="submit"] {
+  border: 0;
+  cursor: pointer; }
+
+/* line 43, scss/base/_forms.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  margin-right: 0.3em; }
+
+/* line 49, scss/base/_forms.scss */
+input[type="color"] {
+  width: 30px;
+  padding: 0; }
+
+/* line 54, scss/base/_forms.scss */
+input[type="search"] {
+  -webkit-appearance: none;
+  border-radius: 0; }
+
+/* line 59, scss/base/_forms.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/* line 65, scss/base/_forms.scss */
+.field-container {
+  margin-bottom: 1em; }
+
+/* line 70, scss/base/_forms.scss */
+.inline-form fieldset, .inline-form .inline-container {
+  position: relative; }
+/* line 74, scss/base/_forms.scss */
+.inline-form input[type=submit], .inline-form button, .inline-form .btn {
+  font-size: 0.875em;
+  padding: 0.65rem 1.3rem;
+  background: #333333;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: auto; }
+  /* line 84, scss/base/_forms.scss */
+  .inline-form input[type=submit]:hover, .inline-form input[type=submit]:focus, .inline-form button:hover, .inline-form button:focus, .inline-form .btn:hover, .inline-form .btn:focus {
+    background: gray;
+    color: white; }
+
+/* Validation */
+/* line 92, scss/base/_forms.scss */
+.has-error {
+  border-color: red; }
+
+/* line 95, scss/base/_forms.scss */
+.is-valid {
+  border-color: #089e00; }
+
+/*------------------------------------*\
+    $Table
+\*------------------------------------*/
+/* line 4, scss/base/_tables.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid gray;
+  width: 100%; }
+
+/* line 10, scss/base/_tables.scss */
+th {
+  text-align: left;
+  border: 1px solid gray;
+  padding: 0.2em; }
+
+/* line 15, scss/base/_tables.scss */
+td {
+  border: 1px solid gray;
+  padding: 0.2em; }
+
+/*------------------------------------*\
+    $PAGE STRUCTURE
+\*------------------------------------*/
+/* line 1, scss/objects/_header.scss */
+.header {
+  background: #000;
+  background-image: url("/../images/dark_leather.png");
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0px 20px 0 #000, 0 0 20px 0 #000 inset; }
+
+/* line 11, scss/objects/_header.scss */
+.logo {
+  display: block;
+  max-height: 120px;
+  margin: 1em auto; }
+
+/*------------------------------------*\
+    $NAVIGATION
+\*------------------------------------*/
+/* line 5, scss/objects/_nav.scss */
+.nav {
+  text-align: center;
+  background: rgba(17, 17, 17, 0.8);
+  width: 100%;
+  z-index: 2; }
+
+/* line 12, scss/objects/_nav.scss */
+.nav a {
+  color: #f1f1f1; }
+
+/* line 17, scss/objects/_nav.scss */
+.nav-list li {
+  padding: .5em 0;
+  border-top: 1px solid #9d8450;
+  border-top: 1px solid rgba(157, 132, 80, 0.3);
+  border-style: solid;
+  border-width: 1px;
+  border-image: linear-gradient(to right, rgba(157, 132, 80, 0) 0%, rgba(157, 132, 80, 0.3) 20%, rgba(157, 132, 80, 0.3) 80%, rgba(157, 132, 80, 0) 100%) 1 1 0 0;
+  border-image-width: 1 0 0 0;
+  position: relative; }
+/* line 28, scss/objects/_nav.scss */
+.nav-list li:first-child {
+  border-width: 0;
+  margin-top: 0;
+  border-image-width: 0 0 0 0; }
+
+/* line 40, scss/objects/_nav.scss */
+.js .nav {
+  display: none;
+  position: absolute;
+  top: 100%; }
+  /* line 45, scss/objects/_nav.scss */
+  .js .nav.nav--open {
+    display: block; }
+
+/* line 50, scss/objects/_nav.scss */
+#nav-toggle {
+  font-size: normal;
+  font-size: 0.875rem;
+  color: #f1f1f1;
+  padding-bottom: 1em;
+  display: block;
+  cursor: pointer; }
+
+@media (min-width: 56em) {
+  /* line 60, scss/objects/_nav.scss */
+  #nav-toggle {
+    display: none; }
+
+  /* line 64, scss/objects/_nav.scss */
+  .nav, .js .nav {
+    display: block;
+    position: static;
+    background: none; }
+
+  /* line 71, scss/objects/_nav.scss */
+  .nav-list > li {
+    border: 0;
+    display: inline-block;
+    padding: 0 1rem .7rem;
+    margin-bottom: 0; } }
+/* line 81, scss/objects/_nav.scss */
+.subnav-list {
+  font-size: normal;
+  font-size: 0.875rem;
+  position: absolute;
+  display: none;
+  background: rgba(0, 0, 0, 0.8);
+  text-align: left;
+  top: 2.3em;
+  left: 0;
+  width: 190px;
+  overflow: hidden; }
+  /* line 92, scss/objects/_nav.scss */
+  .subnav-list li {
+    width: 180px;
+    letter-spacing: 0;
+    text-transform: none;
+    padding-left: 1rem;
+    padding-right: 1rem; }
+
+@media (min-width: 56em) {
+  /* line 102, scss/objects/_nav.scss */
+  .nav-list > li:hover > ul {
+    display: block; }
+
+  /* line 106, scss/objects/_nav.scss */
+  .subnav-list {
+    z-index: 2; }
+    /* line 108, scss/objects/_nav.scss */
+    .subnav-list li {
+      position: relative;
+      left: -1rem;
+      padding-left: 2rem; } }
+/* line 118, scss/objects/_nav.scss */
+.pagination {
+  height: 2.8em;
+  overflow: hidden;
+  line-height: 2.8;
+  text-align: center; }
+  /* line 124, scss/objects/_nav.scss */
+  .pagination .prev {
+    width: 48%;
+    max-width: 120px; }
+  /* line 129, scss/objects/_nav.scss */
+  .pagination .next {
+    width: 48%;
+    max-width: 120px; }
+  /* line 134, scss/objects/_nav.scss */
+  .pagination ol {
+    display: none;
+    text-align: center;
+    height: 100%; }
+  /* line 140, scss/objects/_nav.scss */
+  .pagination li, .pagination li a {
+    color: #f1f1f1; }
+  /* line 144, scss/objects/_nav.scss */
+  .pagination li {
+    line-height: 2.8;
+    background: #9d8450;
+    text-align: center;
+    display: inline-block;
+    height: 100%; }
+  /* line 152, scss/objects/_nav.scss */
+  .pagination ol > li {
+    margin: 0 .1em .1em; }
+  /* line 156, scss/objects/_nav.scss */
+  .pagination ol a {
+    padding: 1.2em; }
+  /* line 160, scss/objects/_nav.scss */
+  .pagination [class^="icon-"] {
+    position: relative;
+    top: .1em; }
+
+@media (min-width: 30em) {
+  /* line 167, scss/objects/_nav.scss */
+  .pagination {
+    max-width: 44.5em;
+    margin: 0 auto; }
+    /* line 171, scss/objects/_nav.scss */
+    .pagination .prev {
+      max-width: none;
+      width: 25%;
+      float: left; }
+    /* line 176, scss/objects/_nav.scss */
+    .pagination .next {
+      max-width: none;
+      width: 25%;
+      float: right;
+      margin-right: 0; }
+    /* line 181, scss/objects/_nav.scss */
+    .pagination ol {
+      display: block;
+      width: 50%;
+      float: left; } }
+/*------------------------------------*\
+    $MAIN CONTENT AREA
+\*------------------------------------*/
+/* line 4, scss/objects/_main.scss */
+[role=main] {
+  padding: 0.5em 0.5em 2em;
+  overflow: hidden; }
+
+/*------------------------------------*\
+    $FOOTER
+\*------------------------------------*/
+/* line 4, scss/objects/_footer.scss */
+footer {
+  clear: both;
+  overflow: hidden;
+  background: #000;
+  color: #ccc;
+  font-size: small;
+  font-size: 0.875rem;
+  padding: 15px 20px 20px;
+  text-align: center; }
+  /* line 13, scss/objects/_footer.scss */
+  footer a {
+    color: #9d8450; }
+
+/* line 18, scss/objects/_footer.scss */
+.imprint {
+  font-size: small;
+  font-size: 0.8125rem; }
+
+/* line 22, scss/objects/_footer.scss */
+.to-top {
+  position: relative;
+  border-bottom: 1px solid #9d8450;
+  border-bottom: 1px solid rgba(157, 132, 80, 0.3);
+  border-style: solid;
+  border-width: 1px;
+  border-image: linear-gradient(to right, rgba(157, 132, 80, 0) 0%, rgba(157, 132, 80, 0.3) 20%, rgba(157, 132, 80, 0.3) 80%, rgba(157, 132, 80, 0) 100%) 0 0 1 1;
+  border-image-width: 0 0 1 0;
+  text-align: center;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  padding-right: 2.4em; }
+  /* line 35, scss/objects/_footer.scss */
+  .to-top [class^="icon-"]:before, .to-top [class*=" icon-"]:before {
+    font-size: 2em; }
+
+/* line 40, scss/objects/_footer.scss */
+.next-to-right {
+  position: absolute;
+  top: 0.8em;
+  font-size: small;
+  font-size: 0.75rem; }
+
+@media (min-width: 56em) {
+  /* line 47, scss/objects/_footer.scss */
+  .to-top {
+    display: none; } }
+/*------------------------------------*\
+    $TEXT Styles
+\*------------------------------------*/
+/*------------------------------------*\
+    $COMPONENTS
+\*------------------------------------*/
+/* line 12, scss/objects/_parallax.scss */
+.parallax-image img, .parallax-events img {
+  display: block; }
+
+/* line 17, scss/objects/_parallax.scss */
+.parallax-wrapper {
+  background: rgba(0, 0, 0, 0.8);
+  color: #f1f1f1;
+  padding: 40px 30px; }
+  /* line 22, scss/objects/_parallax.scss */
+  .parallax-wrapper .headline {
+    color: #9d8450; }
+
+@media (min-width: 37.5em) {
+  /* line 28, scss/objects/_parallax.scss */
+  .parallax {
+    background-image: url("../images/slider.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    max-height: 1200px;
+    padding: 1px; }
+
+  /* line 36, scss/objects/_parallax.scss */
+  .parallax-image, .parallax-events {
+    display: none; }
+
+  /* line 40, scss/objects/_parallax.scss */
+  .parallax-wrapper {
+    background: rgba(34, 34, 34, 0.8);
+    width: 80%;
+    margin: 6em auto; } }
+@media (min-width: 56em) {
+  /* line 48, scss/objects/_parallax.scss */
+  .parallax {
+    position: relative;
+    height: 1200px;
+    background-position: center top;
+    background-size: auto 1360px; }
+
+  /* line 55, scss/objects/_parallax.scss */
+  .parallax-wrapper {
+    position: absolute;
+    right: 6em;
+    top: 10%;
+    width: 50rem;
+    max-width: 80%;
+    margin: 0 auto; } }
+@media (min-width: 1920px) {
+  /* line 66, scss/objects/_parallax.scss */
+  .parallax {
+    background-size: cover; } }
+/* line 80, scss/objects/_parallax.scss */
+.parallax-events {
+  background: url(../../images/slider.jpg) top center;
+  background-size: auto 100%;
+  background-size: cover;
+  height: 0;
+  padding-bottom: 120%;
+  overflow: scroll;
+  position: relative; }
+
+/* line 91, scss/objects/_parallax.scss */
+.parallax-events-scrolling {
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  width: 3000px;
+  min-width: 100%;
+  text-align: center; }
+
+/* line 100, scss/objects/_parallax.scss */
+.parallax-event {
+  display: inline-block;
+  width: 280px;
+  max-height: 100%;
+  margin: 0 20px 0 0;
+  background: white;
+  padding: 20px 40px 0; }
+
+@media (min-width: 37.5em) {
+  /* line 110, scss/objects/_parallax.scss */
+  .parallax--events {
+    position: relative;
+    padding-bottom: 800px; }
+
+  /* line 114, scss/objects/_parallax.scss */
+  .parallax-events {
+    background: none;
+    display: block;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 40%;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%; }
+
+  /* line 126, scss/objects/_parallax.scss */
+  .parallax-events-scrolling {
+    padding-left: 20px;
+    width: 3020px; } }
+/* line 1, scss/objects/_floating.scss */
+.block.floating {
+  background: none; }
+
+/* line 6, scss/objects/_floating.scss */
+.floating-image img {
+  display: block; }
+
+/* line 11, scss/objects/_floating.scss */
+.floating-wrapper {
+  background: white;
+  color: #333333;
+  padding: 40px 30px 40px; }
+
+/* line 21, scss/objects/_floating.scss */
+.text {
+  border-bottom: 2px solid #9d8450; }
+
+/* line 25, scss/objects/_floating.scss */
+.text--shorten {
+  padding-bottom: 1.4em;
+  overflow: hidden; }
+  /* line 29, scss/objects/_floating.scss */
+  .text--shorten .overflow {
+    position: relative;
+    height: 7em;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  /* line 35, scss/objects/_floating.scss */
+  .text--shorten .overflow::after {
+    content: "...";
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0 20px 1px 45px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 46%, #ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1); }
+
+/* line 47, scss/objects/_floating.scss */
+.floating-info {
+  margin-top: 1em;
+  color: #666666;
+  font-size: 75%; }
+
+@media (min-width: 37.5em) {
+  /* line 54, scss/objects/_floating.scss */
+  .floating-image {
+    position: relative;
+    padding: 0 30px 0; }
+
+  /* line 59, scss/objects/_floating.scss */
+  .floating-image:after {
+    content: "";
+    position: absolute;
+    top: 70%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    z-index: -1; }
+
+  /* line 70, scss/objects/_floating.scss */
+  .text .overflow {
+    height: auto;
+    overflow: auto; }
+  /* line 74, scss/objects/_floating.scss */
+  .text .overflow:after {
+    display: none; } }
+/* line 80, scss/objects/_floating.scss */
+.floating-wrapper .text--padding {
+  padding: 1% 15% 1% 7%; }
+
+@media (min-width: 37.5em) {
+  /* line 6, scss/objects/_gallery.scss */
+  .gallery-6 > div {
+    width: 48.71795%;
+    float: left; }
+    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+    .gallery-6 > div:nth-child(2n + 1) {
+      margin-left: 0;
+      margin-right: -100%;
+      clear: both;
+      margin-left: 0; }
+    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+    .gallery-6 > div:nth-child(2n + 2) {
+      margin-left: 51.28205%;
+      margin-right: -100%;
+      clear: none; } }
+@media (min-width: 56em) {
+  /* line 12, scss/objects/_gallery.scss */
+  .gallery-6 > div {
+    width: 32.20339%;
+    float: left; }
+    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+    .gallery-6 > div:nth-child(3n + 1) {
+      margin-left: 0;
+      margin-right: -100%;
+      clear: both;
+      margin-left: 0; }
+    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+    .gallery-6 > div:nth-child(3n + 2) {
+      margin-left: 33.89831%;
+      margin-right: -100%;
+      clear: none; }
+    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+    .gallery-6 > div:nth-child(3n + 3) {
+      margin-left: 67.79661%;
+      margin-right: -100%;
+      clear: none; } }
+/* line 17, scss/objects/_gallery.scss */
+.small-grid div {
+  width: 47.36842%;
+  float: left;
+  background: gray; }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+  .small-grid div:nth-child(2n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0; }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+  .small-grid div:nth-child(2n + 2) {
+    margin-left: 52.63158%;
+    margin-right: -100%;
+    clear: none; }
+  @media (min-width: 30em) {
+    /* line 17, scss/objects/_gallery.scss */
+    .small-grid div {
+      width: 23.07692%;
+      float: left; }
+      /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+      .small-grid div:nth-child(4n + 1) {
+        margin-left: 0;
+        margin-right: -100%;
+        clear: both;
+        margin-left: 0; }
+      /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+      .small-grid div:nth-child(4n + 2) {
+        margin-left: 25.64103%;
+        margin-right: -100%;
+        clear: none; }
+      /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+      .small-grid div:nth-child(4n + 3) {
+        margin-left: 51.28205%;
+        margin-right: -100%;
+        clear: none; }
+      /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+      .small-grid div:nth-child(4n + 4) {
+        margin-left: 76.92308%;
+        margin-right: -100%;
+        clear: none; } }
+  @media (min-width: 37.5em) {
+    /* line 17, scss/objects/_gallery.scss */
+    .small-grid div {
+      width: 32.20339%;
+      float: left; }
+      /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+      .small-grid div:nth-child(3n + 1) {
+        margin-left: 0;
+        margin-right: -100%;
+        clear: both;
+        margin-left: 0; }
+      /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+      .small-grid div:nth-child(3n + 2) {
+        margin-left: 33.89831%;
+        margin-right: -100%;
+        clear: none; }
+      /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+      .small-grid div:nth-child(3n + 3) {
+        margin-left: 67.79661%;
+        margin-right: -100%;
+        clear: none; } }
+  @media (min-width: 56em) {
+    /* line 17, scss/objects/_gallery.scss */
+    .small-grid div {
+      width: 24.05063%;
+      float: left; }
+      /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+      .small-grid div:nth-child(4n + 1) {
+        margin-left: 0;
+        margin-right: -100%;
+        clear: both;
+        margin-left: 0; }
+      /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+      .small-grid div:nth-child(4n + 2) {
+        margin-left: 25.31646%;
+        margin-right: -100%;
+        clear: none; }
+      /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+      .small-grid div:nth-child(4n + 3) {
+        margin-left: 50.63291%;
+        margin-right: -100%;
+        clear: none; }
+      /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+      .small-grid div:nth-child(4n + 4) {
+        margin-left: 75.94937%;
+        margin-right: -100%;
+        clear: none; } }
+
+/* line 1, scss/objects/_media-block.scss */
+.media-block {
+  margin-bottom: 2rem; }
+
+/* line 5, scss/objects/_media-block.scss */
+.media-block-image {
+  margin-bottom: 1rem; }
+
+/* line 9, scss/objects/_media-block.scss */
+.media-block-image img {
+  display: block; }
+
+/* line 15, scss/objects/_media-block.scss */
+.media-block-wrapper h2 a, .media-block-wrapper h3 a, .media-block-wrapper h4 a, .media-block-wrapper h5 a, .media-block-wrapper h6 a {
+  color: #9d8450; }
+
+/* line 25, scss/objects/_media-block.scss */
+.media-block-wrapper {
+  border-bottom: 2px solid #9d8450; }
+
+/* line 29, scss/objects/_media-block.scss */
+.overflow {
+  position: relative;
+  height: 7em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 1rem; }
+
+/* line 36, scss/objects/_media-block.scss */
+.overflow::after {
+  content: "...";
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0 20px 1px 45px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 46%, #ffffff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1); }
+
+/* line 47, scss/objects/_media-block.scss */
+.overflow-disable {
+  height: auto;
+  overflow: auto;
+  margin-bottom: 0; }
+
+/* line 52, scss/objects/_media-block.scss */
+.overflow-disable:after {
+  display: none; }
+
+@media (min-width: 37.5em) {
+  /* line 57, scss/objects/_media-block.scss */
+  .overflow-disable--medium {
+    height: auto;
+    overflow: auto;
+    margin-bottom: 0; }
+
+  /* line 62, scss/objects/_media-block.scss */
+  .overflow-disable--medium:after {
+    display: none; } }
+/* Icon Font */
+@font-face {
+  font-family: 'icons';
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+/* line 15, scss/objects/_icons.scss */
+[data-icon]:before, [class^="icon-"], [class*=" icon-"] {
+  font-family: 'icons';
+  content: attr(data-icon);
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* line 28, scss/objects/_icons.scss */
+.icon-space {
+  padding-right: .5em; }
+
+/* line 32, scss/objects/_icons.scss */
+.icon-space-half {
+  padding-right: .25em; }
+
+/* line 36, scss/objects/_icons.scss */
+.icon-space-alt {
+  padding-left: .5em; }
+
+/* line 40, scss/objects/_icons.scss */
+.icon-space-half-alt {
+  padding-left: .25em; }
+
+/* line 44, scss/objects/_icons.scss */
+a [class^="icon-"]:before, a [class*=" icon-"]:before {
+  text-decoration: none; }
+
+/* line 48, scss/objects/_icons.scss */
+.icon-arrow-up-left:before {
+  content: "\e600"; }
+
+/* line 51, scss/objects/_icons.scss */
+.icon-arrow-up:before {
+  content: "\e601"; }
+
+/* line 54, scss/objects/_icons.scss */
+.icon-arrow-up-right:before {
+  content: "\e602"; }
+
+/* line 57, scss/objects/_icons.scss */
+.icon-arrow-right:before {
+  content: "\e603"; }
+
+/* line 60, scss/objects/_icons.scss */
+.icon-arrow-down-right:before {
+  content: "\e604"; }
+
+/* line 63, scss/objects/_icons.scss */
+.icon-arrow-down:before {
+  content: "\e605"; }
+
+/* line 66, scss/objects/_icons.scss */
+.icon-arrow-down-left:before {
+  content: "\e606"; }
+
+/* line 69, scss/objects/_icons.scss */
+.icon-arrow-left:before {
+  content: "\e607"; }
+
+/* line 72, scss/objects/_icons.scss */
+.icon-arrow-up-left2:before {
+  content: "\e608"; }
+
+/* line 75, scss/objects/_icons.scss */
+.icon-arrow-up2:before {
+  content: "\e609";
+  position: relative;
+  top: .07em; }
+
+/* line 80, scss/objects/_icons.scss */
+.icon-arrow-up-right2:before {
+  content: "\e60a"; }
+
+/* line 83, scss/objects/_icons.scss */
+.icon-arrow-right2:before {
+  content: "\e60b"; }
+
+/* line 86, scss/objects/_icons.scss */
+.icon-arrow-down-right2:before {
+  content: "\e60c"; }
+
+/* line 89, scss/objects/_icons.scss */
+.icon-arrow-down2:before {
+  content: "\e60d"; }
+
+/* line 92, scss/objects/_icons.scss */
+.icon-arrow-down-left2:before {
+  content: "\e60e"; }
+
+/* line 95, scss/objects/_icons.scss */
+.icon-arrow-left2:before {
+  content: "\e60f"; }
+
+/* line 1, scss/objects/_blocks.scss */
+.block {
+  margin-bottom: 1rem;
+  background: white; }
+
+/* line 6, scss/objects/_blocks.scss */
+.block-wrapper {
+  padding: 40px 30px; }
+
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+/* line 4, scss/objects/_buttons.scss */
+.button, button, input[type="submit"], .button-alt {
+  display: inline-block;
+  background: #9d8450;
+  color: #fff;
+  line-height: 1.4;
+  padding: 0.8em 2em;
+  min-width: 10em;
+  max-width: 100%;
+  border: 0;
+  text-align: center;
+  margin: 0 1em 1em 0; }
+  /* line 17, scss/objects/_buttons.scss */
+  .button:hover, button:hover, input[type="submit"]:hover, .button-alt:hover, .button:focus, button:focus, input[type="submit"]:focus, .button-alt:focus {
+    background: #b49d6c;
+    color: #fff;
+    text-decoration: none; }
+  /* line 23, scss/objects/_buttons.scss */
+  .button.disabled, button.disabled, input.disabled[type="submit"], .disabled.button-alt {
+    background: #eeeeee;
+    color: gray; }
+
+/* line 29, scss/objects/_buttons.scss */
+.button-alt {
+  background: #666666; }
+  /* line 32, scss/objects/_buttons.scss */
+  .button-alt:hover, .button-alt:focus {
+    background: gray; }
+
+/* line 37, scss/objects/_buttons.scss */
+.button--disabled {
+  background: #aaaaaa; }
+  /* line 39, scss/objects/_buttons.scss */
+  .button--disabled:hover, .button--disabled:focus {
+    background: #c3c3c3; }
+
+/* line 44, scss/objects/_buttons.scss */
+.button-text, .button-text-alt {
+  white-space: nowrap;
+  color: #9d8450;
+  font-style: italic; }
+
+/* line 50, scss/objects/_buttons.scss */
+.button-text-alt {
+  color: #333333; }
+
+/* line 10, scss/objects/_comments.scss */
+.comment-form-container-profile {
+  float: left;
+  width: 100px; }
+  /* line 14, scss/objects/_comments.scss */
+  .comment-form-container-profile img {
+    margin-bottom: .5em; }
+
+/* line 19, scss/objects/_comments.scss */
+.comment-form {
+  margin-left: 120px;
+  min-width: 300px; }
+
+@media (max-width: 31.25em) {
+  /* line 25, scss/objects/_comments.scss */
+  .comment-form-container-profile {
+    float: none;
+    width: 100%;
+    *zoom: 1; }
+    /* line 30, scss/objects/_comments.scss */
+    .comment-form-container-profile:before, .comment-form-container-profile:after {
+      content: " ";
+      /* 1 */
+      display: table;
+      /* 2 */ }
+    /* line 35, scss/objects/_comments.scss */
+    .comment-form-container-profile:after {
+      clear: both; }
+    /* line 38, scss/objects/_comments.scss */
+    .comment-form-container-profile img {
+      float: left;
+      max-width: 50px; }
+    /* line 43, scss/objects/_comments.scss */
+    .comment-form-container-profile .comment-form-container-name {
+      margin-left: 70px;
+      line-height: 50px; }
+
+  /* line 49, scss/objects/_comments.scss */
+  .comment-form {
+    margin-left: 0;
+    min-width: 0;
+    max-width: 100%; } }
+/* line 62, scss/objects/_comments.scss */
+.comment {
+  margin-top: 1em;
+  margin-bottom: 2em; }
+
+/* line 68, scss/objects/_comments.scss */
+.comment-profile {
+  float: left;
+  width: 50px; }
+
+/* line 73, scss/objects/_comments.scss */
+.comment-wrapper {
+  margin-left: 70px; }
+
+/* line 77, scss/objects/_comments.scss */
+.comment-name {
+  color: #9d8450; }
+
+/* line 82, scss/objects/_comments.scss */
+.comment-text {
+  border-bottom: 1px solid #9d8450;
+  margin-bottom: .5em; }
+
+/* line 87, scss/objects/_comments.scss */
+.comment-info {
+  color: #666666;
+  font-size: 75%; }
+
+@media (max-width: 25em) {
+  /* line 93, scss/objects/_comments.scss */
+  .comment-profile {
+    width: 70px;
+    padding-right: 20px; }
+
+  /* line 97, scss/objects/_comments.scss */
+  .comment-wrapper {
+    margin-left: 0; } }
+/* line 108, scss/objects/_comments.scss */
+.comments {
+  margin-left: 50px; }
+
+@media (max-width: 31.25em) {
+  /* line 113, scss/objects/_comments.scss */
+  .comments {
+    margin-left: 0px; } }
+/* line 1, scss/objects/_loggedin.scss */
+.loggedin-profile {
+  float: left;
+  width: 70px; }
+
+/* line 6, scss/objects/_loggedin.scss */
+.loggedin-name {
+  margin-left: 90px; }
+  /* line 9, scss/objects/_loggedin.scss */
+  .loggedin-name .zeta, .loggedin-name h6 {
+    padding: .9em 0;
+    margin: 0; }
+
+/* line 15, scss/objects/_loggedin.scss */
+.loggedin-top {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to right, rgba(157, 132, 80, 0) 0%, rgba(157, 132, 80, 0.3) 20%, rgba(157, 132, 80, 0.3) 80%, rgba(157, 132, 80, 0) 100%) 0 0 1 1;
+  margin-bottom: 1em;
+  padding-bottom: .5em; }
+
+@media (min-width: 37.5em) {
+  /* line 3, scss/sites/_home.scss */
+  .home-login, .home-save-the-date {
+    width: 49.15254%;
+    float: left;
+    margin-right: 1.69492%; }
+
+  /* line 7, scss/sites/_home.scss */
+  .home-save-the-date {
+    float: right;
+    margin-right: 0; } }
+@media (min-width: 65em) {
+  /* line 13, scss/sites/_home.scss */
+  .home-main {
+    width: 65.51724%;
+    float: left;
+    margin-right: 3.44828%; }
+
+  /* line 16, scss/sites/_home.scss */
+  .home-side {
+    width: 31.03448%;
+    float: left;
+    margin-right: 3.44828%;
+    float: right;
+    margin-right: 0; }
+
+  /* line 21, scss/sites/_home.scss */
+  .home-login, .home-save-the-date {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0; }
+
+  /* line 25, scss/sites/_home.scss */
+  .home-save-the-date {
+    float: right;
+    margin-right: 0; } }

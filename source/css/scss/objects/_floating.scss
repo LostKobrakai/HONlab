@@ -1,0 +1,82 @@
+.block.floating{
+	background: none;
+}
+
+.floating-image{
+	img{
+		display: block;
+	}
+}
+
+.floating-wrapper{
+	background: rgba($HONwhite, 1);
+	color: $HONblack;
+	padding: 40px 30px 40px;
+
+	.headline{
+		//color: $HONbeige;
+	}
+}
+
+.text{
+	border-bottom: 2px solid $HONbeige;
+}
+
+.text--shorten{
+	padding-bottom: 1.4em;
+	overflow: hidden;
+
+	.overflow {
+		position:relative;
+		height: 5*1.4em;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.overflow::after {
+		content:"...";
+		font-weight:bold;
+		position:absolute;
+		bottom:0;
+		right:0;
+		padding:0 20px 1px 45px;
+		background: linear-gradient(to right, rgba($HONwhite,0) 0%,rgba($HONwhite,1) 46%,rgba($HONwhite,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1);
+	}
+}
+
+.floating-info{
+	margin-top: 1em;
+	color: $HONgray;
+	font-size: 75%;
+}
+
+@include breakpoint($bp-medium){
+	.floating-image{
+		position: relative;
+		padding: 0 30px 0;
+	}
+
+	.floating-image:after{
+		content: "";
+		position: absolute;
+		top: 70%;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba($HONwhite, 1);
+		z-index: -1;
+	}
+	.text{
+		.overflow{
+			height: auto;
+			overflow: auto;
+		}
+		.overflow:after{
+			display: none;
+		}
+	}
+}
+
+.floating-wrapper .text--padding{
+	padding: 1% 15% 1% 7%;
+}

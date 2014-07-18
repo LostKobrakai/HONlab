@@ -1,0 +1,130 @@
+//-------------------------------
+//
+// Standart View
+//
+//-------------------------------
+
+.parallax{
+
+}
+
+.parallax-image{
+	img{
+		display: block;
+	}
+}
+
+.parallax-wrapper{
+	background: rgba(black, .8);
+	color: #f1f1f1;
+	padding: 40px 30px;
+
+	.headline{
+		color: $HONbeige;
+	}
+}
+
+@include breakpoint($bp-medium){
+	.parallax{
+		background-image: url("../images/slider.jpg");
+		background-repeat: no-repeat;
+		background-position: center center;
+		max-height: 1200px;
+		padding: 1px;
+	}
+
+	.parallax-image{
+		display: none;
+	}
+
+	.parallax-wrapper{
+		background: rgba(#222, .8);
+		width: 80%;
+		margin: 6em auto;
+	}
+}
+
+@include breakpoint($bp-large){
+	.parallax{
+		position: relative;
+		height: 1200px;
+		background-position: center top;
+		background-size: auto 1360px;
+	}
+
+	.parallax-wrapper{
+		position: absolute;
+		right: 6em;
+		top: 10%;
+		width: 50rem;
+		max-width: 80%;
+		margin: 0 auto;
+	}
+}
+
+@media (min-width: 1920px){
+	.parallax{
+		background-size: cover;
+	}
+}
+
+//-------------------------------
+//
+// Event view
+//
+//-------------------------------
+
+.parallax--events{
+}
+
+.parallax-events{
+	@extend .parallax-image;
+	background: url(../../images/slider.jpg) top center;
+	background-size: auto 100%;
+	background-size: cover;
+	height: 0;
+	padding-bottom: 120%;
+	overflow: scroll;
+	position: relative;
+}
+
+.parallax-events-scrolling{
+	position: absolute;
+	top: 10%;
+	bottom: 10%;
+	width: 3000px;
+	min-width: 100%;
+	text-align: center;
+}
+
+.parallax-event{
+	display: inline-block;
+	width: 280px;
+	max-height: 100%;
+	margin: 0 20px 0 0;
+	background: $HONwhite;
+	padding: 20px 40px 0;
+}
+
+@include breakpoint($bp-medium){
+	.parallax--events{
+		position: relative;
+		padding-bottom: 800px;
+	}
+	.parallax-events{
+		background: none;
+		display: block;
+		position: absolute;
+		padding: 0;
+		margin: 0;
+		top: 40%;
+		right: 0;
+		bottom: 0;
+		height: 100%;
+		width: 100%;
+	}
+	.parallax-events-scrolling{
+		padding-left: 20px;
+		width: 3020px;
+	}
+}

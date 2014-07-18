@@ -1,0 +1,35 @@
+{{> organisms-header }}
+<main>
+	<div class="home-main">
+		{{> molecules-floating }}
+		<div class="block">
+			<div class="block-wrapper">
+				<h2 class="headline">Kommentare</h2>
+				<div class="comments">
+					{{> molecules-comment }}
+					{{> molecules-comment }}
+					{{> molecules-comment }}
+				</div>
+				<h3 class="headline">Kommentieren</h3>
+				{{> molecules-comment-form }}
+			</div>
+		</div>
+	</div>
+	<div class="home-side">
+		<div class="block home-login">
+			<div class="block-wrapper">
+				<h2 class="headline">Member</h2>
+				{{> molecules-login }}
+			</div>
+		</div>
+		<div class="block home-save-the-date">
+			<div class="block-wrapper">
+				<h2 class="headline">Themen</h2>
+				{{> molecules-save-block:delta }}
+				{{> molecules-save-block:delta }}
+				{{> molecules-save-block:delta }}
+			</div>
+		</div>
+	</div>
+</main>
+{{> organisms-footer }}

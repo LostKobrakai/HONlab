@@ -1,0 +1,75 @@
+/* Headings */
+/*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
+
+.uppercase{
+	text-transform: uppercase;
+	letter-spacing: .10em;
+}
+
+%headline-border{
+	border-bottom: 2px solid $HONbeige;
+	margin-bottom: 1rem;
+}
+
+h1, .alpha, 
+h2, .beta, 
+h3, .gamma, 
+h4, .delta, 
+h5, .epsilon, 
+h6, .zeta{
+	color: $HONblack;
+	border-bottom: 2px solid transparent; 
+	margin-bottom: 1rem;
+}
+
+h1, .alpha   { 
+	@extend .uppercase;
+	line-height: 1.2;
+	font-weight: normal;
+}
+
+h2, .beta    { 
+	@extend .uppercase;
+	line-height: 1.2;
+	font-weight: normal;
+}
+
+h3, .gamma   { 
+	@extend .uppercase;
+	line-height: 1.2;
+	font-weight: normal;
+}
+
+h4, .delta   {
+	font-weight: normal;
+}
+
+h5, .epsilon { 
+	font-weight: normal;
+	line-height: 1.2;
+}
+
+h6, .zeta    { 
+	font-weight: normal;
+	line-height: 1.2;
+}
+
+/* Subheadings */
+.subheading {
+	font-weight: normal;
+}
+
+.headline{
+	font-family: $font-secondary;
+	font-weight: normal;
+	border-bottom: 2px solid $HONbeige;
+	margin-bottom: 1rem;
+}
+
+.headline .date{
+	font-size: 60%;
+	line-height: 1;
+	color: $gray;
+	font-family: $font;
+	letter-spacing: 0;
+}

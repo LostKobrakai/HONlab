@@ -1,0 +1,28 @@
+
+@include breakpoint($bp-medium){
+	.home-login, .home-save-the-date{
+		@include span(6 of 12);
+	}
+
+	.home-save-the-date{
+		@include last();
+	}
+}
+
+@include breakpoint($bp-wide){
+	.home-main{
+		@include span(4 of 6);
+	}
+	.home-side{
+		@include span(2 of 6);
+		@include last();
+	}
+
+	.home-login, .home-save-the-date{
+		@include span(1 of 1);
+	}
+
+	.home-save-the-date{
+		@include last();
+	}
+}

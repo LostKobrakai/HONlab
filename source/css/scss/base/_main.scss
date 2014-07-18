@@ -1,0 +1,36 @@
+@font-face {
+	font-family: 'tf-arrow';
+	src:url('../fonts/tfarrowmedium-nor-webfont.eot');
+	src:url('../fonts/tfarrowmedium-nor-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/tfarrowmedium-nor-webfont.woff') format('woff'),
+		url('../fonts/tfarrowmedium-nor-webfont.ttf') format('truetype'),
+		url('../fonts/tfarrowmedium-nor-webfont.svg#icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic);
+
+body {
+	background: $white;
+	background: url("../images/bg.png") center top;
+	font: 100%/1.4 $font;
+	-webkit-text-size-adjust: 100%;
+	color: $gray-dark;
+	font-weight: 400;
+	-webkit-text-rendering: optimizeLegibility;
+	text-rendering: optimizeLegibility
+}
+
+main{
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 2rem 0 1rem;
+}
+
+@include breakpoint($bp-medium){
+	main{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}

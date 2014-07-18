@@ -1,0 +1,53 @@
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+.button {
+	@extend .uppercase;
+	display: inline-block;
+	background: $HONbeige;
+	color: #fff;
+	line-height: 1.4;
+	padding: 0.8em 2em;
+	min-width: 10em;
+	max-width: 100%;
+	border: 0;
+	text-align: center;
+	margin: 0 1em 1em 0;
+	
+	&:hover, &:focus {
+		background: lighten($HONbeige, 10%);
+		color: #fff;
+		text-decoration: none;
+	}
+
+	&.disabled {
+		background: $gray-light-2;
+		color: $gray;
+	}
+}
+
+.button-alt{
+	@extend .button;
+	background: $HONgray;
+	&:hover, &:focus {
+		background: lighten($HONgray, 10%);
+	}
+}
+
+.button--disabled{
+	background: $HONgray-light;
+	&:hover, &:focus {
+		background: lighten($HONgray-light, 10%);
+	}
+}
+
+.button-text {
+	white-space: nowrap;
+	color: $HONbeige;
+	font-style: italic;
+}
+
+.button-text-alt{
+	@extend .button-text;
+	color: $HONblack;
+}

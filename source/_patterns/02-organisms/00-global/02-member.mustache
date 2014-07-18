@@ -1,0 +1,11 @@
+<div class="block {{ styleModifier }}">
+	<div class="block-wrapper">
+		{{# loggedin }}
+		{{> molecules-loggedin }}
+		{{/ loggedin }}
+		{{^ loggedin }}
+		<h2 class="headline">Member</h2>
+		{{> molecules-login }}
+		{{/ loggedin }}
+	</div>
+</div>

@@ -1,0 +1,32 @@
+.gallery-6{
+	@extend .cf;
+}
+
+@include breakpoint($bp-medium){
+	.gallery-6 > div{
+		@include gallery(4 of 8);
+	}
+}
+
+@include breakpoint($bp-large){
+	.gallery-6 > div{
+		@include gallery(4 of 12);
+	}
+}
+
+.small-grid div{
+	@include gallery(2 of 4);
+	background: $gray;
+
+	@include breakpoint($bp-small){
+		@include gallery(2 of 8);
+	}
+
+	@include breakpoint($bp-medium){
+		@include gallery(4 of 12);
+	}
+
+	@include breakpoint($bp-large){
+		@include gallery(4 of 16);
+	}
+}

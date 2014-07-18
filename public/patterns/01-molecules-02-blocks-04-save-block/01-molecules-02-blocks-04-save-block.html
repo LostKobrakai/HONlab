@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html class="pl">
+	<head>
+		<title>Pattern Lab</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" />
+		
+		<link rel="stylesheet" href="../../css/style.css?1405604197" media="all" />
+		<!-- <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic prefetch' rel='stylesheet' type='text/css'> -->
+		<script type="text/javascript" src="../../js/prefixfree.min.js"></script>
+		<script type="text/javascript" src="../../js/modernizr.js"></script>
+
+		<!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+				<!-- never cache patterns -->
+		<meta http-equiv="cache-control" content="max-age=0" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+		<meta http-equiv="pragma" content="no-cache" />
+		
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1405604197" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1405604197" media="all" />
+		
+
+		<!-- End Pattern Lab -->
+	
+	</head>
+	<body class="body no-js">	
+		<div class="media-block">
+		<h2 class=" headline">
+			<a href="#" class="media-block-link">
+				<span class="date">25.03.2014</span><br/>
+				Lorem ipsum dolor sit (37 characters)
+			</a>
+		</h2>
+		<div class="media-block-wrapper">
+			<div class="media-block-text">
+				<div class="overflow">
+					<p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+			</div>
+		</div>
+</div>
+	<!--DO NOT REMOVE-->
+		
+	<script>
+		// handle injection of items from PHP
+		var patternPartial = "molecules-save-block";
+		var lineage        = [];
+		var lineageR       = [{"lineagePattern":"molecules-parallax-events","lineagePath":"..\/..\/patterns\/01-molecules-02-blocks-02-parallax-events\/01-molecules-02-blocks-02-parallax-events.html"},{"lineagePattern":"templates-home","lineagePath":"..\/..\/patterns\/03-templates-00-home\/03-templates-00-home.html"},{"lineagePattern":"templates-home-loggedin","lineagePath":"..\/..\/patterns\/03-templates-00-home-loggedin\/03-templates-00-home-loggedin.html"},{"lineagePattern":"templates-article","lineagePath":"..\/..\/patterns\/03-templates-01-article\/03-templates-01-article.html"},{"lineagePattern":"pages-home","lineagePath":"..\/..\/patterns\/04-pages-01-home\/04-pages-01-home.html"}];
+		var patternState   = "";
+		var cssEnabled     = false;
+	</script>
+		<script>
+		/*!
+		 * scriptLoader - v0.1
+		 *
+		 * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+		 * Licensed under the MIT license
+		 *
+		 */
+		
+		var scriptLoader = {
+			
+			run: function(js,cb,target) {
+				var s  = document.getElementById(target+'-'+cb); 
+				for (var i = 0; i < js.length; i++) {
+					var src = (typeof js[i] != "string") ? js[i].src : js[i];
+					var c   = document.createElement('script');
+					c.src   = '../../'+src+'?'+cb;
+					if (typeof js[i] != "string") {
+						if (js[i].dep !== undefined) {
+							c.onload = function(dep,cb,target) {
+								return function() {
+									scriptLoader.run(dep,cb,target);
+								}
+							}(js[i].dep,cb,target);
+						}
+					}
+					s.parentNode.insertBefore(c,s);
+				}
+			}
+			
+		}
+	</script>
+	<script id="pl-js-polyfill-insert-1405604197">
+		(function() {
+			if (self != top) {
+				var cb = '1405604197';
+				var js = [];
+				if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
+					js.push("styleguide/js/vendor/classlist-polyfill.js");
+				}
+				scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+			}
+		})();
+	</script>
+	<script id="pl-js-insert-1405604197">
+		(function() {
+			if (self != top) {
+				var cb = '1405604197';
+				var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
+				scriptLoader.run(js,cb,'pl-js-insert');
+			}
+		})();
+	</script>
+	
+
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery.velocity.min.js"></script>
+	<script type="text/javascript" src="../../js/init.js"></script>
+	</body>
+</html>

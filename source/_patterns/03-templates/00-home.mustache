@@ -1,0 +1,38 @@
+{{> organisms-header }}
+<main>
+	<div class="home-main">
+		{{> molecules-floating(video: true, textShorten: true) }}
+		<div class="block">
+			<div class="block-wrapper">
+				<h2 class="headline">Magazin</h2>
+				<div class="gallery-6">
+					<div>
+						{{> molecules-media-block:delta }}
+					</div><div>
+						{{> molecules-media-block:delta }}
+					</div><div>
+						{{> molecules-media-block:delta }}
+					</div><div>
+						{{> molecules-media-block:delta }}
+					</div><div>
+						{{> molecules-media-block:delta }}
+					</div><div>
+						{{> molecules-media-block:delta }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="home-side">
+		{{> organisms-member:home-login }}
+		<div class="block home-save-the-date">
+			<div class="block-wrapper">
+				<h2 class="headline">Save the Date</h2>
+				{{> molecules-save-block:delta }}
+				{{> molecules-save-block:delta }}
+				{{> molecules-save-block:delta }}
+			</div>
+		</div>
+	</div>
+</main>
+{{> organisms-footer }}

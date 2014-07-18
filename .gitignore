@@ -1,4 +1,5 @@
-.sass-cache
+.sass-cache/
 .DS_Store
-.codekit-cache
+.codekit-cache/
 config.codekit
+.sassc

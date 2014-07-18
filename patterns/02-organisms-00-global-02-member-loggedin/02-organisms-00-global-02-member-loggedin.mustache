@@ -1,0 +1,11 @@
+&lt;div class=&quot;block {{ styleModifier }}&quot;&gt;
+	&lt;div class=&quot;block-wrapper&quot;&gt;
+		{{# loggedin }}
+		{{&gt; molecules-loggedin }}
+		{{/ loggedin }}
+		{{^ loggedin }}
+		&lt;h2 class=&quot;headline&quot;&gt;Member&lt;/h2&gt;
+		{{&gt; molecules-login }}
+		{{/ loggedin }}
+	&lt;/div&gt;
+&lt;/div&gt;

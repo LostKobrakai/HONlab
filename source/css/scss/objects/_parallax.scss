@@ -74,9 +74,6 @@
 //
 //-------------------------------
 
-.parallax--events{
-}
-
 .parallax-events{
 	@extend .parallax-image;
 	background: url(../../images/slider.jpg) top center;
@@ -86,6 +83,26 @@
 	padding-bottom: 120%;
 	overflow: scroll;
 	position: relative;
+}
+
+.parallax-arrow{
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 20%;
+	height: 50px;
+	line-height: 100%;
+	margin-top: -25px;
+	width: 35px;
+	background: $HONbeige;
+	color: white;
+	line-height: 50px;
+	font-size: 1.5em;
+	text-align: center;
+
+	a{
+		color: white;
+	}
 }
 
 .parallax-events-scrolling{
@@ -104,6 +121,7 @@
 	margin: 0 20px 0 0;
 	background: $HONwhite;
 	padding: 20px 40px 0;
+	text-align: left;
 }
 
 @include breakpoint($bp-medium){
@@ -120,8 +138,11 @@
 		top: 40%;
 		right: 0;
 		bottom: 0;
-		height: 100%;
+		height: 60%;
 		width: 100%;
+	}
+	.parallax-arrow{
+		top: 60%;
 	}
 	.parallax-events-scrolling{
 		padding-left: 20px;

@@ -2,3 +2,4 @@
 	path = public
 	url = git@github.com:LostKobrakai/HONlab.git
 	branch = gh-pages
+	ignore = 

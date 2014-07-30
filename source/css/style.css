@@ -1095,56 +1095,72 @@ footer {
   background: url(../../images/slider.jpg) top center;
   background-size: auto 100%;
   background-size: cover;
-  height: 0;
-  padding-bottom: 120%;
+  height: 20rem;
   overflow: scroll;
+  overflow-y: auto;
   position: relative; }
 
 /* line 88, scss/objects/_parallax.scss */
-.parallax-arrow {
+.parallax-arrows {
   content: "";
   position: absolute;
   right: 0;
-  top: 20%;
-  height: 50px;
+  top: 10rem;
   line-height: 100%;
   margin-top: -25px;
+  line-height: 50px;
+  height: 50px;
+  width: 100%; }
+
+/* line 100, scss/objects/_parallax.scss */
+.parallax-arrow {
+  position: absolute;
   width: 35px;
   background: #9d8450;
+  height: 50px;
   color: white;
-  line-height: 50px;
-  font-size: 1.5em;
-  text-align: center; }
-  /* line 103, scss/objects/_parallax.scss */
+  text-align: center;
+  font-size: 1.5em; }
+  /* line 109, scss/objects/_parallax.scss */
   .parallax-arrow a {
     color: white; }
 
-/* line 108, scss/objects/_parallax.scss */
+/* line 114, scss/objects/_parallax.scss */
+.parallax-arrow--left {
+  left: 0;
+  display: none; }
+
+/* line 119, scss/objects/_parallax.scss */
+.parallax-arrow--right {
+  right: 0; }
+
+/* line 123, scss/objects/_parallax.scss */
 .parallax-events-scrolling {
   position: absolute;
   top: 10%;
   bottom: 10%;
-  width: 3000px;
+  width: 3020px;
   min-width: 100%;
-  text-align: center; }
+  text-align: left;
+  padding-left: 20px; }
 
-/* line 117, scss/objects/_parallax.scss */
+/* line 133, scss/objects/_parallax.scss */
 .parallax-event {
   display: inline-block;
   width: 280px;
-  max-height: 100%;
+  max-height: 250px;
   margin: 0 20px 0 0;
   background: white;
   padding: 20px 40px 0;
   text-align: left; }
 
 @media (min-width: 37.5em) {
-  /* line 128, scss/objects/_parallax.scss */
+  /* line 144, scss/objects/_parallax.scss */
   .parallax--events {
     position: relative;
     padding-bottom: 800px; }
 
-  /* line 132, scss/objects/_parallax.scss */
+  /* line 148, scss/objects/_parallax.scss */
   .parallax-events {
     background: none;
     display: block;
@@ -1157,14 +1173,13 @@ footer {
     height: 60%;
     width: 100%; }
 
-  /* line 144, scss/objects/_parallax.scss */
-  .parallax-arrow {
+  /* line 160, scss/objects/_parallax.scss */
+  .parallax-arrows {
     top: 60%; }
 
-  /* line 147, scss/objects/_parallax.scss */
+  /* line 163, scss/objects/_parallax.scss */
   .parallax-events-scrolling {
-    padding-left: 20px;
-    width: 3020px; } }
+    text-align: center; } }
 /* line 1, scss/objects/_floating.scss */
 .block.floating {
   background: none; }

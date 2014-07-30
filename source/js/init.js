@@ -158,6 +158,62 @@ $(".parallax").each(function(i){
 
 //-------------------------------
 //
+// Parallax Event Arrows
+//
+//-------------------------------
+
+function checkArrows(e){
+	$(e.currentTarget).unbind("scroll", checkArrows);
+	var scrolledContainer = $(e.currentTarget),
+			parent = scrolledContainer.closest(".parallax--events"),
+			scroll = scrolledContainer.scrollLeft(),
+			left = parent.find(".parallax-arrow--left"),
+			right = parent.find(".parallax-arrow--right"),
+			max = 0;
+
+	//scrolledContainer.scrollLeft(scrolledContainer.children(".parallax-events-scrolling").width());
+	max = e.currentTarget.scrollWidth - e.currentTarget.clientWidth;
+	scrolledContainer.scrollLeft(scroll);
+	console.log(max);
+
+	if(scroll == 0) left.hide();
+	else if(left.is(":hidden")) left.show();
+
+	if(scroll == max) right.hide();
+	else if(right.is(":hidden")) right.show();
+
+	scrolledContainer.bind("scroll", checkArrows);
+}
+
+function addScrollLeft(e){
+	var parent = $(e.currentTarget).closest(".parallax--events"),
+			scrollContainer = parent.find(".parallax-events");
+
+	scrollContainer.unbind("scroll", checkArrows);
+	scrollContainer.animate({ scrollLeft: scrollContainer.scrollLeft() + 300 }, 300, "swing", function(){
+		$(this).bind("scroll", checkArrows);
+	});
+	//scrollContainer.scrollLeft(scrollContainer.scrollLeft() + 100);
+}
+
+function subScrollLeft(e){
+	var parent = $(e.currentTarget).closest(".parallax--events"),
+			scrollContainer = parent.find(".parallax-events");
+
+	scrollContainer.unbind("scroll", checkArrows);
+	scrollContainer.animate({ scrollLeft: scrollContainer.scrollLeft() - 300 }, 300, "swing", function(){
+		$(this).bind("scroll", checkArrows);
+	});
+	//scrollContainer.scrollLeft(scrollContainer.scrollLeft() - 100);
+}
+
+$(".parallax-arrow--left").click(subScrollLeft);
+$(".parallax-arrow--right").click(addScrollLeft);
+
+$(".parallax-events").bind("scroll", checkArrows);
+
+//-------------------------------
+//
 // Scroll to Top
 //
 //-------------------------------
@@ -167,3 +223,5 @@ function toTop(e){
 }
 
 $(".to-top").click(toTop);
+
+

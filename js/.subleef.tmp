@@ -171,8 +171,8 @@ function checkArrows(e){
 			right = parent.find(".parallax-arrow--right"),
 			max = 0;
 
-	//scrolledContainer.scrollLeft(scrolledContainer.children(".parallax-events-scrolling").width());
-	max = e.currentTarget.scrollWidth - e.currentTarget.clientWidth;
+	scrolledContainer.scrollLeft(scrolledContainer.children(".parallax-events-scrolling").width());
+	max = scrolledContainer.scrollLeft();
 	scrolledContainer.scrollLeft(scroll);
 	console.log(max);
 
@@ -190,7 +190,7 @@ function addScrollLeft(e){
 			scrollContainer = parent.find(".parallax-events");
 
 	scrollContainer.unbind("scroll", checkArrows);
-	scrollContainer.animate({ scrollLeft: scrollContainer.scrollLeft() + 300 }, 300, "swing", function(){
+	scrollContainer.animate({ scrollLeft: scrollContainer.scrollLeft() + 100 }, 300, "swing", function(){
 		$(this).bind("scroll", checkArrows);
 	});
 	//scrollContainer.scrollLeft(scrollContainer.scrollLeft() + 100);
@@ -201,7 +201,7 @@ function subScrollLeft(e){
 			scrollContainer = parent.find(".parallax-events");
 
 	scrollContainer.unbind("scroll", checkArrows);
-	scrollContainer.animate({ scrollLeft: scrollContainer.scrollLeft() - 300 }, 300, "swing", function(){
+	scrollContainer.animate({ scrollLeft: scrollContainer.scrollLeft() - 100 }, 300, "swing", function(){
 		$(this).bind("scroll", checkArrows);
 	});
 	//scrollContainer.scrollLeft(scrollContainer.scrollLeft() - 100);

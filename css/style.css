@@ -510,7 +510,11 @@ a {
 /* Headings */
 /*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
 /* line 4, scss/base/_headings.scss */
+<<<<<<< HEAD
 .uppercase, h1, .alpha, h2, .beta, h3, .gamma, .nav-list > li, #nav-toggle, .button, button, input[type="submit"], .button-alt, .comment-name, .spirit-filter-title {
+=======
+.uppercase, h1, .alpha, h2, .beta, h3, .gamma, .nav-list > li, #nav-toggle, .button, button, input[type="submit"], .button-alt, .comment-name {
+>>>>>>> gh-pages
   text-transform: uppercase;
   letter-spacing: .10em; }
 
@@ -1480,6 +1484,7 @@ footer {
 a [class^="icon-"]:before, a [class*=" icon-"]:before {
   text-decoration: none; }
 
+<<<<<<< HEAD
 /* line 50, scss/objects/_icons.scss */
 .icon-home:before {
   content: "\e600"; }
@@ -1623,6 +1628,73 @@ a [class^="icon-"]:before, a [class*=" icon-"]:before {
 /* line 155, scss/objects/_icons.scss */
 .icon-arrow-left2:before {
   content: "\e623"; }
+=======
+/* line 48, scss/objects/_icons.scss */
+.icon-arrow-up-left:before {
+  content: "\e600"; }
+
+/* line 51, scss/objects/_icons.scss */
+.icon-arrow-up:before {
+  content: "\e601"; }
+
+/* line 54, scss/objects/_icons.scss */
+.icon-arrow-up-right:before {
+  content: "\e602"; }
+
+/* line 57, scss/objects/_icons.scss */
+.icon-arrow-right:before {
+  content: "\e603"; }
+
+/* line 60, scss/objects/_icons.scss */
+.icon-arrow-down-right:before {
+  content: "\e604"; }
+
+/* line 63, scss/objects/_icons.scss */
+.icon-arrow-down:before {
+  content: "\e605"; }
+
+/* line 66, scss/objects/_icons.scss */
+.icon-arrow-down-left:before {
+  content: "\e606"; }
+
+/* line 69, scss/objects/_icons.scss */
+.icon-arrow-left:before {
+  content: "\e607"; }
+
+/* line 72, scss/objects/_icons.scss */
+.icon-arrow-up-left2:before {
+  content: "\e608"; }
+
+/* line 75, scss/objects/_icons.scss */
+.icon-arrow-up2:before {
+  content: "\e609";
+  position: relative;
+  top: .07em; }
+
+/* line 80, scss/objects/_icons.scss */
+.icon-arrow-up-right2:before {
+  content: "\e60a"; }
+
+/* line 83, scss/objects/_icons.scss */
+.icon-arrow-right2:before {
+  content: "\e60b"; }
+
+/* line 86, scss/objects/_icons.scss */
+.icon-arrow-down-right2:before {
+  content: "\e60c"; }
+
+/* line 89, scss/objects/_icons.scss */
+.icon-arrow-down2:before {
+  content: "\e60d"; }
+
+/* line 92, scss/objects/_icons.scss */
+.icon-arrow-down-left2:before {
+  content: "\e60e"; }
+
+/* line 95, scss/objects/_icons.scss */
+.icon-arrow-left2:before {
+  content: "\e60f"; }
+>>>>>>> gh-pages
 
 /* line 1, scss/objects/_blocks.scss */
 .block {
@@ -1790,6 +1862,7 @@ a [class^="icon-"]:before, a [class*=" icon-"]:before {
   margin-bottom: 1em;
   padding-bottom: .5em; }
 
+<<<<<<< HEAD
 /* line 1, scss/objects/_spirit-products.scss */
 .spirit-filter {
   position: relative;
@@ -1859,6 +1932,8 @@ a [class^="icon-"]:before, a [class*=" icon-"]:before {
 .spirit-headline {
   border-bottom: 2px solid #9d8450; }
 
+=======
+>>>>>>> gh-pages
 @media (min-width: 37.5em) {
   /* line 3, scss/sites/_home.scss */
   .home-login, .home-save-the-date {

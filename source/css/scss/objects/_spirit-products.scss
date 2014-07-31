@@ -1,0 +1,84 @@
+.spirit-filter{
+	position: relative;
+	height: 1.4em;
+	font-size: 1.5em;
+}
+
+.spirit-filter-toggle{
+	padding-left: 20px;
+}
+
+.spirit-filter-list{
+	display: none;
+	position: absolute;
+	top: 0;
+	padding-top: 1.5em;
+
+	background: rgba(#111, .8);
+	color: white;
+	max-width: 100%;
+	width: 300px;
+	padding-bottom: 1px;
+
+	a{
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+		color: white;
+	}
+
+	a:hover, a:active, a:focus{
+		color: $HONbeige;
+	}
+
+	li{
+		font-size: 1rem;
+		padding: .5em 20px;
+		border-top: 1px solid $HONbeige;
+		border-top: 1px solid rgba($HONbeige, 0.3);
+		border-style: solid;
+		border-width: 1px;
+		border-image: $HONgradient 1 1 0 0;
+		border-image-width: 1 0 0 0;
+		position: relative;
+	}
+}
+
+.spirit-filter-title{
+	@extend .uppercase;
+}
+
+.spirit-filter-counter{
+	float: right;
+}
+
+.spirit-filter--open{
+	.spirit-filter-list{
+		display: block;
+	}
+	.spirit-filter-toggle{
+		position: relative;
+		color: white;
+		z-index: 20;
+	}
+	.spirit-filter-list{
+		z-index: 5;
+	}
+}
+
+
+//
+//
+//
+
+.spirit-cart-link{
+	float: right;
+
+	.icon-cart{
+		font-size: 1.5em;
+	}
+}
+
+.spirit-headline{
+	border-bottom: $HONborder;
+}

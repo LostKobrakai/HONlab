@@ -2,3 +2,11 @@
 	<a href="#" class="spirit-cart-link"><span>Einkaufswagen</span><span aria-hidden="true" class="icon-cart"></span><span class="spirit-cart-counter icon-space">3</span></a>
 	{{> molecules-spirit-filter("spirit-filter-open": true) }}
 </div>
+<div class="spirit-products cf">
+	{{# products-count}}
+		{{> molecules-spirit-product }}
+	{{/ products-count}}
+</div>
+<div class="spirit-pagination">
+	{{> molecules-pagination }}
+</div>

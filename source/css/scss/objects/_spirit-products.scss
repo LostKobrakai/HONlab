@@ -81,4 +81,69 @@
 
 .spirit-headline{
 	border-bottom: $HONborder;
+	margin-bottom: 2em;
+}
+
+//
+// Produkt
+//
+
+.spirit-product{
+	border-bottom: $HONborder;
+	padding-bottom: 1em;
+	margin-bottom: 2em;
+}
+
+.spirit-product img{
+	display: block;
+	margin-bottom: 1em;
+}
+
+.spirit-product-text{
+	min-height: 7em;
+}
+
+.spirit-product-name{
+	font-family: $font;
+	border-top: $HONborder;
+	padding-top: 1em;
+}
+
+.spirit-product-price,
+.spirit-product-add{
+	text-align: right;
+}
+
+.spirit-product-price{
+	color: $HONbeige;
+	font-size: 120%;
+}
+
+.spirit-product-add{
+	font-size: 80%;
+	color: $HONbeige;
+	@extend .uppercase;
+}
+
+@include breakpoint($bp-small){
+	.spirit-product{
+		@include gallery(3 of 6);
+	}
+}
+
+@include breakpoint($bp-large){
+	.spirit-product{
+		@include gallery(6 of 12);
+	}
+}
+
+
+//
+// Produkt - Warenkorb
+//
+
+.spirit-cart-product{
+	border-bottom: $HONborder;
+	padding-bottom: 1em;
+	margin-bottom: 2em;
 }

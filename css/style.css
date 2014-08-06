@@ -510,7 +510,7 @@ a {
 /* Headings */
 /*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
 /* line 4, scss/base/_headings.scss */
-.uppercase, h1, .alpha, h2, .beta, h3, .gamma, .nav-list > li, #nav-toggle, .button, button, input[type="submit"], .button-alt, .comment-name, .spirit-filter-title {
+.uppercase, h1, .alpha, h2, .beta, h3, .gamma, .nav-list > li, #nav-toggle, .button, button, input[type="submit"], .button-alt, .comment-name, .spirit-filter-title, .spirit-product-add {
   text-transform: uppercase;
   letter-spacing: .10em; }
 
@@ -1272,22 +1272,17 @@ footer {
 @media (min-width: 56em) {
   /* line 12, scss/objects/_gallery.scss */
   .gallery-6 > div {
-    width: 32.20339%;
+    width: 49.15254%;
     float: left; }
     /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
-    .gallery-6 > div:nth-child(3n + 1) {
+    .gallery-6 > div:nth-child(2n + 1) {
       margin-left: 0;
       margin-right: -100%;
       clear: both;
       margin-left: 0; }
     /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
-    .gallery-6 > div:nth-child(3n + 2) {
-      margin-left: 33.89831%;
-      margin-right: -100%;
-      clear: none; }
-    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
-    .gallery-6 > div:nth-child(3n + 3) {
-      margin-left: 67.79661%;
+    .gallery-6 > div:nth-child(2n + 2) {
+      margin-left: 50.84746%;
       margin-right: -100%;
       clear: none; } }
 /* line 17, scss/objects/_gallery.scss */
@@ -1861,7 +1856,82 @@ a [class^="icon-"]:before, a [class*=" icon-"]:before {
 
 /* line 82, scss/objects/_spirit-products.scss */
 .spirit-headline {
-  border-bottom: 2px solid #9d8450; }
+  border-bottom: 2px solid #9d8450;
+  margin-bottom: 2em; }
+
+/* line 91, scss/objects/_spirit-products.scss */
+.spirit-product {
+  border-bottom: 2px solid #9d8450;
+  padding-bottom: 1em;
+  margin-bottom: 2em; }
+
+/* line 97, scss/objects/_spirit-products.scss */
+.spirit-product img {
+  display: block;
+  margin-bottom: 1em; }
+
+/* line 102, scss/objects/_spirit-products.scss */
+.spirit-product-text {
+  min-height: 7em; }
+
+/* line 106, scss/objects/_spirit-products.scss */
+.spirit-product-name {
+  font-family: "Lato", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  border-top: 2px solid #9d8450;
+  padding-top: 1em; }
+
+/* line 112, scss/objects/_spirit-products.scss */
+.spirit-product-price,
+.spirit-product-add {
+  text-align: right; }
+
+/* line 117, scss/objects/_spirit-products.scss */
+.spirit-product-price {
+  color: #9d8450;
+  font-size: 120%; }
+
+/* line 122, scss/objects/_spirit-products.scss */
+.spirit-product-add {
+  font-size: 80%;
+  color: #9d8450; }
+
+@media (min-width: 30em) {
+  /* line 129, scss/objects/_spirit-products.scss */
+  .spirit-product {
+    width: 48.27586%;
+    float: left; }
+    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+    .spirit-product:nth-child(2n + 1) {
+      margin-left: 0;
+      margin-right: -100%;
+      clear: both;
+      margin-left: 0; }
+    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+    .spirit-product:nth-child(2n + 2) {
+      margin-left: 51.72414%;
+      margin-right: -100%;
+      clear: none; } }
+@media (min-width: 56em) {
+  /* line 135, scss/objects/_spirit-products.scss */
+  .spirit-product {
+    width: 49.15254%;
+    float: left; }
+    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+    .spirit-product:nth-child(2n + 1) {
+      margin-left: 0;
+      margin-right: -100%;
+      clear: both;
+      margin-left: 0; }
+    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+    .spirit-product:nth-child(2n + 2) {
+      margin-left: 50.84746%;
+      margin-right: -100%;
+      clear: none; } }
+/* line 145, scss/objects/_spirit-products.scss */
+.spirit-cart-product {
+  border-bottom: 2px solid #9d8450;
+  padding-bottom: 1em;
+  margin-bottom: 2em; }
 
 @media (min-width: 37.5em) {
   /* line 3, scss/sites/_home.scss */

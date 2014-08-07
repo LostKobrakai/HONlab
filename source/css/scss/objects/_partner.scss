@@ -1,0 +1,21 @@
+.partner{
+	border-bottom: $HONborder;
+	padding-bottom: 1em;
+}
+
+.partner-headline{
+	font-family: $font;
+	margin-top: 1em;
+}
+
+@include breakpoint($bp-medium){
+	.block--partner{
+		@include gallery(3 of 6);
+	}
+}
+
+@include breakpoint($bp-large){
+	.block--partner{
+		@include gallery(6 of 12);
+	}
+}

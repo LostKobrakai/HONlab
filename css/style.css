@@ -1933,6 +1933,48 @@ a [class^="icon-"]:before, a [class*=" icon-"]:before {
   padding-bottom: 1em;
   margin-bottom: 2em; }
 
+/* line 1, scss/objects/_partner.scss */
+.partner {
+  border-bottom: 2px solid #9d8450;
+  padding-bottom: 1em; }
+
+/* line 6, scss/objects/_partner.scss */
+.partner-headline {
+  font-family: "Lato", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  margin-top: 1em; }
+
+@media (min-width: 37.5em) {
+  /* line 12, scss/objects/_partner.scss */
+  .block--partner {
+    width: 48.27586%;
+    float: left; }
+    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+    .block--partner:nth-child(2n + 1) {
+      margin-left: 0;
+      margin-right: -100%;
+      clear: both;
+      margin-left: 0; }
+    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+    .block--partner:nth-child(2n + 2) {
+      margin-left: 51.72414%;
+      margin-right: -100%;
+      clear: none; } }
+@media (min-width: 56em) {
+  /* line 18, scss/objects/_partner.scss */
+  .block--partner {
+    width: 49.15254%;
+    float: left; }
+    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+    .block--partner:nth-child(2n + 1) {
+      margin-left: 0;
+      margin-right: -100%;
+      clear: both;
+      margin-left: 0; }
+    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+    .block--partner:nth-child(2n + 2) {
+      margin-left: 50.84746%;
+      margin-right: -100%;
+      clear: none; } }
 @media (min-width: 37.5em) {
   /* line 3, scss/sites/_home.scss */
   .home-login, .home-save-the-date {

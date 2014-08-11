@@ -1716,10 +1716,11 @@ a [class^="icon-"]:before, a [class*=" icon-"]:before {
 /* line 44, scss/objects/_buttons.scss */
 .button-text, .button-text-alt {
   white-space: nowrap;
+  hyphens: none;
   color: #9d8450;
   font-style: italic; }
 
-/* line 50, scss/objects/_buttons.scss */
+/* line 51, scss/objects/_buttons.scss */
 .button-text-alt {
   color: #333333; }
 

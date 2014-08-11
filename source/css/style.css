@@ -1269,8 +1269,29 @@ footer {
       margin-left: 51.28205%;
       margin-right: -100%;
       clear: none; } }
-@media (min-width: 56em) {
+@media (min-width: 55em) {
   /* line 12, scss/objects/_gallery.scss */
+  .gallery-6 > div {
+    width: 31.81818%;
+    float: left; }
+    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+    .gallery-6 > div:nth-child(3n + 1) {
+      margin-left: 0;
+      margin-right: -100%;
+      clear: both;
+      margin-left: 0; }
+    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+    .gallery-6 > div:nth-child(3n + 2) {
+      margin-left: 34.09091%;
+      margin-right: -100%;
+      clear: none; }
+    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+    .gallery-6 > div:nth-child(3n + 3) {
+      margin-left: 68.18182%;
+      margin-right: -100%;
+      clear: none; } }
+@media (min-width: 64em) {
+  /* line 18, scss/objects/_gallery.scss */
   .gallery-6 > div {
     width: 49.15254%;
     float: left; }
@@ -1285,7 +1306,28 @@ footer {
       margin-left: 50.84746%;
       margin-right: -100%;
       clear: none; } }
-/* line 17, scss/objects/_gallery.scss */
+@media (min-width: 86em) {
+  /* line 24, scss/objects/_gallery.scss */
+  .gallery-6 > div {
+    width: 32.20339%;
+    float: left; }
+    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+    .gallery-6 > div:nth-child(3n + 1) {
+      margin-left: 0;
+      margin-right: -100%;
+      clear: both;
+      margin-left: 0; }
+    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+    .gallery-6 > div:nth-child(3n + 2) {
+      margin-left: 33.89831%;
+      margin-right: -100%;
+      clear: none; }
+    /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.2/sass/susy/language/susy/_gallery.scss */
+    .gallery-6 > div:nth-child(3n + 3) {
+      margin-left: 67.79661%;
+      margin-right: -100%;
+      clear: none; } }
+/* line 29, scss/objects/_gallery.scss */
 .small-grid div {
   width: 47.36842%;
   float: left;
@@ -1302,7 +1344,7 @@ footer {
     margin-right: -100%;
     clear: none; }
   @media (min-width: 30em) {
-    /* line 17, scss/objects/_gallery.scss */
+    /* line 29, scss/objects/_gallery.scss */
     .small-grid div {
       width: 23.07692%;
       float: left; }
@@ -1328,7 +1370,7 @@ footer {
         margin-right: -100%;
         clear: none; } }
   @media (min-width: 37.5em) {
-    /* line 17, scss/objects/_gallery.scss */
+    /* line 29, scss/objects/_gallery.scss */
     .small-grid div {
       width: 32.20339%;
       float: left; }
@@ -1349,7 +1391,7 @@ footer {
         margin-right: -100%;
         clear: none; } }
   @media (min-width: 56em) {
-    /* line 17, scss/objects/_gallery.scss */
+    /* line 29, scss/objects/_gallery.scss */
     .small-grid div {
       width: 24.05063%;
       float: left; }

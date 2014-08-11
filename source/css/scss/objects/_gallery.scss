@@ -8,9 +8,21 @@
 	}
 }
 
-@include breakpoint($bp-large){
+@include breakpoint("55em"){
+	.gallery-6 > div{
+		@include gallery(3 of 9);
+	}
+}
+
+@include breakpoint($bp-wide){
 	.gallery-6 > div{
 		@include gallery(6 of 12);
+	}
+}
+
+@include breakpoint("86em"){
+	.gallery-6 > div{
+		@include gallery(4 of 12);
 	}
 }
 
